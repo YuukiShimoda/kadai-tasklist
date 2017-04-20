@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'microposts/create'
+
+  get 'microposts/destroy'
+
   get 'sessions/new'
 
   get 'sessions/create'
@@ -26,4 +30,6 @@ Rails.application.routes.draw do
 	
 	resources :tasks
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :microposts, only: [:create, :destroy]
+
 end
